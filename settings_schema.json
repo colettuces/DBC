@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Global Settings",
+    "settings": [
+      {
+        "type": "select",
+        "id": "global_font_family",
+        "label": "Font Family",
+        "options": [
+          { "value": "work", "label": "Work Sans" },
+          { "value": "averia", "label": "Averia Serif Libre" },
+          { "value": "inter", "label": "Inter" }
+        ],
+        "default": "work"
+      },
+      {
+        "type": "color",
+        "id": "global_text_color",
+        "label": "Text Color",
+        "default": "#2f2f2f"
+      },
+      {
+        "type": "select",
+        "id": "global_text_alignment",
+        "label": "Text Alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "select",
+        "id": "global_background_type",
+        "label": "Background Type",
+        "options": [
+          { "value": "solid", "label": "Solid Color" },
+          { "value": "gradient", "label": "Gradient" }
+        ],
+        "default": "solid"
+      },
+      {
+        "type": "color",
+        "id": "global_bg_color",
+        "label": "Background Color",
+        "default": "#fffdf6"
+      },
+      {
+        "type": "color_background",
+        "id": "global_bg_gradient",
+        "label": "Background Gradient"
+      }
+    ]
+  }
+]
