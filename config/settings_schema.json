@@ -94,5 +94,23 @@
         "default": true
       }
     ]
+    {
+  "type": "range",
+  "id": "heading_font_size",
+  "label": "Heading Font Size",
+  "min": 20,
+  "max": 48,
+  "step": 2,
+  "default": 32
+},
+{
+  "type": "range",
+  "id": "site_max_width",
+  "label": "Site Max Width (px)",
+  "min": 800,
+  "max": 1600,
+  "step": 100,
+  "default": 1200
+}
   }
 ]
