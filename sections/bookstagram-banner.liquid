@@ -6,16 +6,18 @@
   <div class="swiper bookstagram-swiper" style="margin-top: 2rem;">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
-        <div class="swiper-slide" style="text-align: center;">
-          {% if block.settings.image %}
-            <img src="{{ block.settings.image | image_url: width: 800 }}" alt="Bookstagram post" style="width: 100%; max-width: 400px; border-radius: 10px;" loading="lazy">
-          {% endif %}
-          {% if block.settings.username %}
-            <strong style="display: block; margin-top: 1rem;">{{ block.settings.username }}</strong>
-          {% endif %}
-          {% if block.settings.caption %}
-            <p style="margin-top: 0.2rem; color: #555; font-family: Helvetica, sans-serif;">{{ block.settings.caption }}</p>
-          {% endif %}
+        <div class="swiper-slide" style="display: flex; justify-content: center;">
+          <div style="background: white; border-radius: 16px; padding: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.08); max-width: 400px;">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url: width: 800 }}" alt="Bookstagram post" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;" loading="lazy">
+            {% endif %}
+            {% if block.settings.username %}
+              <strong style="display: block; text-align: center; font-size: 1rem; color: #5a3e2b;">{{ block.settings.username }}</strong>
+            {% endif %}
+            {% if block.settings.caption %}
+              <p style="text-align: center; font-size: 0.9rem; color: #6a4e32; margin-top: 0.25rem;">{{ block.settings.caption }}</p>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
