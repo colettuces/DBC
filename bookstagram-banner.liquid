@@ -1,0 +1,66 @@
+<section style="background: rgba(255,255,255,0.92); padding: 3rem 1rem;">
+  <h2 style="text-align: center; font-size: {{ section.settings.heading_size }}px; font-family: var(--heading-font); color: {{ settings.global_text_color }};">
+    {{ section.settings.heading_text }}
+  </h2>
+
+  <div class="swiper bookstagram-swiper" style="margin-top: 2rem;">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide" style="text-align: center;">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | image_url: width: 800 }}" alt="Bookstagram post" style="width: 100%; max-width: 400px; border-radius: 10px;" loading="lazy">
+          {% endif %}
+          {% if block.settings.username %}
+            <strong style="display: block; margin-top: 1rem;">{{ block.settings.username }}</strong>
+          {% endif %}
+          {% if block.settings.caption %}
+            <p style="margin-top: 0.2rem; color: #555; font-family: Helvetica, sans-serif;">{{ block.settings.caption }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next" style="color: #6a4e32;"></div>
+    <div class="swiper-button-prev" style="color: #6a4e32;"></div>
+  </div>
+</section>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.bookstagram-swiper', {
+      loop: true,
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      keyboard: true,
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Bookstagram Carousel",
+  "settings": [
+    { "type": "text", "id": "heading_text", "label": "Heading Text", "default": "Show Off your Latest Reads" },
+    { "type": "range", "id": "heading_size", "label": "Heading Font Size", "min": 16, "max": 48, "default": 32 }
+  ],
+  "blocks": [
+    {
+      "type": "image_slide",
+      "name": "Bookstagram Post",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Bookstagram Photo" },
+        { "type": "text", "id": "username", "label": "Instagram Username", "default": "booklover123" },
+        { "type": "text", "id": "caption", "label": "Caption", "default": "Just finished this gem!" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Bookstagram Carousel", "category": "Media" }]
+}
+{% endschema %}
