@@ -50,6 +50,48 @@
         "type": "color_background",
         "id": "global_bg_gradient",
         "label": "Background Gradient"
+      },
+      {
+        "type": "range",
+        "id": "body_font_size",
+        "label": "Body Font Size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "button_radius",
+        "label": "Button Radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 6
+      },
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Button Background Color",
+        "default": "#c4562a"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "image_filter",
+        "label": "Image CSS Filter",
+        "default": "none"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_shadows",
+        "label": "Enable Shadows",
+        "default": true
       }
     ]
   }
