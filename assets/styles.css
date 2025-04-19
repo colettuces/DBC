@@ -7,6 +7,40 @@ body {
   font-family: {% if settings.global_font_family == 'averia' %}'Averia Serif Libre'{% elsif settings.global_font_family == 'inter' %}'Inter'{% else %}'Work Sans'{% endif %}, sans-serif;
 }
 
+/* Header Styles */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 2rem 2rem 1rem;
+  background-color: {{ settings.global_bg_color }};
+  text-align: {{ settings.global_text_alignment }};
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.site-header .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: {{ settings.global_text_color }};
+  text-decoration: none;
+  font-family: {% if settings.global_font_family == 'averia' %}'Averia Serif Libre'{% elsif settings.global_font_family == 'inter' %}'Inter'{% else %}'Work Sans'{% endif %}, sans-serif;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  font-family: {% if settings.global_font_family == 'averia' %}'Averia Serif Libre'{% elsif settings.global_font_family == 'inter' %}'Inter'{% else %}'Work Sans'{% endif %}, sans-serif;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
@@ -189,11 +223,6 @@ body {
 .testimonial-card:hover {
   transform: translateY(-5px);
 }
-.sticky-header {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -211,8 +240,8 @@ body {
     gap: 0.8rem;
   }
 }
+
 #cart-note {
   background-color: #fffdf6;
   resize: vertical;
 }
-
