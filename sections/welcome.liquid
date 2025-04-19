@@ -7,6 +7,19 @@
   <p>{{ section.settings.paragraph_1 }}</p>
   <p>{{ section.settings.paragraph_2 }}</p>
 
+  {% if section.settings.show_decor_top_left %}
+    <div class="decor" style="
+      background-image: url({{ section.settings.decor_top_left_image | asset_url }});
+      position: absolute;
+      top: {{ section.settings.decor_top_left_top }};
+      left: {{ section.settings.decor_top_left_left }};
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    "></div>
+  {% endif %}
+
   {% if customer %}
     <p>Welcome back, {{ customer.first_name }}!</p>
     <a href="/account" class="btn">View My Account</a>
@@ -43,6 +56,30 @@
       "id": "paragraph_2",
       "label": "Second Paragraph",
       "default": "Here, you’ll find vintage-inspired Canva templates and bookish design tools — all crafted to help you show up online in a way that feels soft, stylish, and unapologetically you."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_decor_top_left",
+      "label": "Show Top Left Decor",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "decor_top_left_image",
+      "label": "Top Left Image",
+      "default": "openbook.png"
+    },
+    {
+      "type": "text",
+      "id": "decor_top_left_top",
+      "label": "Top",
+      "default": "20px"
+    },
+    {
+      "type": "text",
+      "id": "decor_top_left_left",
+      "label": "Left",
+      "default": "20px"
     }
   ],
   "presets": [
