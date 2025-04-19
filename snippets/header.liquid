@@ -1,4 +1,4 @@
-<header class="site-header sticky-header" style="position: sticky; top: 0; width: 100%; z-index: 9999; background: {{ settings.global_bg_color }}; text-align: {{ settings.global_text_alignment }}; padding: 2rem 2rem 1rem;">
+<header class="site-header sticky-header">
   <!-- Logo -->
   <a href="{{ routes.root_url }}" class="logo" style="font-size: 2rem; font-weight: bold; color: {{ settings.global_text_color }}; text-decoration: none; font-family: {% if settings.global_font_family == 'averia' %}'Averia Serif Libre'{% elsif settings.global_font_family == 'inter' %}'Inter'{% else %}'Work Sans'{% endif %};">
     {{ shop.name }}
