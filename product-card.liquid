@@ -1,0 +1,41 @@
+<div class="product-card">
+  <div class="product-image-wrapper">
+    <a href="{{ product.url }}">
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.title }}"
+        class="product-image"
+      />
+    </a>
+
+    {% if show_sale_badge and product.compare_at_price > product.price %}
+      <span class="sale-badge" style="
+        background-color: {{ badge_background }};
+        color: {{ badge_text_color }};
+        font-family: {% if badge_font == 'averia' %}'Averia Serif Libre'{% elsif badge_font == 'inter' %}'Inter'{% else %}'Work Sans'{% endif %};
+      ">
+        {{ badge_text }}
+      </span>
+    {% endif %}
+  </div>
+
+  <h3 class="product-title">{{ product.title }}</h3>
+
+  <p class="product-price">
+    {% if product.compare_at_price > product.price %}
+      <span class="price-current">{{ product.price | money }}</span>
+      <span class="price-compare">{{ product.compare_at_price | money }}</span>
+    {% else %}
+      <span class="price-current">{{ product.price | money }}</span>
+    {% endif %}
+  </p>
+
+  <div class="product-buttons">
+    <a href="{{ product.url }}" class="btn view-btn">View Product</a>
+
+    <form class="add-to-cart-form">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <button type="submit" class="btn add-btn">Add to Cart</button>
+    </form>
+  </div>
+</div>
